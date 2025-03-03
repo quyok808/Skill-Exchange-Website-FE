@@ -2,8 +2,15 @@
 import React from "react";
 import styles from "./Header.module.css";
 import logo from "/skill_exchange_logo.svg";
-import { FaHome, FaSearch, FaBell, FaUser } from "react-icons/fa";
-import RegisterButton from "../RegisterButton/RegisterButton";
+import {
+  FaHome,
+  FaSearch,
+  FaBell,
+  FaUser,
+  FaCalendar,
+  FaUserFriends,
+} from "react-icons/fa";
+import RegisterButton from "../RegisterButton";
 
 function Header() {
   return (
@@ -15,25 +22,25 @@ function Header() {
         <li>
           <a href="/">
             <FaHome />
-            Home
+            Trang chủ
           </a>
         </li>
         <li>
           <a href="#">
             <FaSearch />
-            About
+            Tìm kiếm
           </a>
         </li>
         <li>
           <a href="#">
-            <FaBell />
-            Services
+            <FaCalendar />
+            Lịch
           </a>
         </li>
         <li>
           <a href="#">
-            <FaUser />
-            Contact
+            <FaUserFriends />
+            Bạn bè
           </a>
         </li>
       </ul>

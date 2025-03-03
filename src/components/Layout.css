@@ -17,7 +17,7 @@
   content: "";
   position: absolute;
   inset: 0; /* Trải đều khắp sidebar */
-  background-color: rgba(88, 88, 88, 0.227); /* Lớp phủ màu đen mờ */
+  background-color: rgba(88, 88, 88, 0.3); /* Lớp phủ màu đen mờ */
   z-index: 0; /* Đảm bảo nằm dưới nội dung */
 }
 
