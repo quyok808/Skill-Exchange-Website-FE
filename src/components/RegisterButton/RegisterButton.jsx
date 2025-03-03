@@ -160,7 +160,7 @@ function RegisterButton() {
     <>
       {/* Hiển thị avatar nếu người dùng đã đăng nhập */}
       {user ? (
-        <Avatar onLogout={handleLogout} />
+        <Avatar user={user} onLogout={handleLogout} />
       ) : (
         <a href="#" className={styles.ctaButton} onClick={showLoginForm}>
           Đăng nhập

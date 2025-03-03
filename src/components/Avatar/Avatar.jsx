@@ -4,7 +4,7 @@ import styles from "./Avatar.module.css";
 import authService from "../../services/auth.service";
 import { useNavigate } from "react-router-dom";
 
-function Avatar({ onLogout }) {
+function Avatar({ user, onLogout }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
@@ -66,10 +66,11 @@ function Avatar({ onLogout }) {
       {isDropdownOpen && (
         <div className={styles.dropdownMenu}>
           <a
-            href="/profile"
-            onClick={() => {
+            href={`/profile`}
+            onClick={(e) => {
+              e.preventDefault(); // Ngăn điều hướng mặc định
               setIsDropdownOpen(false);
-              navigate("/profile");
+              navigate(`/profile`, { state: { user } });
             }}
           >
             Thông tin cá nhân

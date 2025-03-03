@@ -12,11 +12,13 @@ function Layout({ children }) {
 
   return (
     <div className="content">
-      <div className="overlay">
+      <div className={`${isHomePage ? "overlay" : ""}`}>
         <Header />
         {isHomePage && <HeroSection />}
       </div>
-      <main>{children}</main>
+      <main style={{ marginTop: "65px", width: "100%", minHeight: "100vh" }}>
+        {children}
+      </main>
       <Footer />
     </div>
   );

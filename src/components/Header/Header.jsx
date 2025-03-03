@@ -2,14 +2,7 @@
 import React from "react";
 import styles from "./Header.module.css";
 import logo from "/skill_exchange_logo.svg";
-import {
-  FaHome,
-  FaSearch,
-  FaBell,
-  FaUser,
-  FaCalendar,
-  FaUserFriends,
-} from "react-icons/fa";
+import { FaHome, FaSearch, FaCalendar, FaUserFriends } from "react-icons/fa";
 import RegisterButton from "../RegisterButton";
 
 function Header() {
