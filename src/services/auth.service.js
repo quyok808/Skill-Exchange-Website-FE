@@ -3,6 +3,7 @@ import axios from "axios"; // Hoặc fetch API
 import authHeader from "./auth-header";
 
 const API_URL = "http://localhost:5008/api/users/"; // Thay đổi URL này
+const header = authHeader();
 
 const register = (name, email, password, confirmPassword) => {
   return axios.post(API_URL + "register", {
@@ -31,7 +32,6 @@ const logout = async () => {
   const token = localStorage.getItem("user");
   if (token) {
     try {
-      const header = authHeader();
       await axios.post(API_URL + "logout", {}, { headers: header });
       localStorage.removeItem("user");
       return { success: true };
@@ -46,7 +46,6 @@ const getCurrentUser = async () => {
   const token = localStorage.getItem("user");
   if (token) {
     try {
-      const header = authHeader();
       const response = await axios.get(API_URL + "me", { headers: header });
       return response.data;
     } catch (error) {
@@ -60,7 +59,6 @@ const getAvatar = async () => {
   const token = localStorage.getItem("user");
   if (token) {
     try {
-      const header = authHeader();
       const response = await axios.get(API_URL + "profile/image", {
         headers: header,
       });
@@ -78,6 +76,15 @@ const sendEmaiResetPass = (email) => {
   });
 };
 
+const uploadAvatar = (formData) => {
+  return axios.put(API_URL + "upload-photo", formData, {
+    headers: {
+      "Content-Type": "multipart/form-data",
+      ...header, // Gộp thêm các header khác nếu cần
+    },
+  });
+};
+
 const authService = {
   register,
   login,
@@ -85,6 +92,7 @@ const authService = {
   getCurrentUser,
   getAvatar,
   sendEmaiResetPass,
+  uploadAvatar,
 };
 
 export default authService;

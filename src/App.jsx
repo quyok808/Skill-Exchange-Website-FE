@@ -18,7 +18,7 @@ function App() {
           }
         />
         <Route
-          path="/profile" // Thêm :userId làm tham số
+          path="/profile"
           element={
             <Layout>
               <Profile />

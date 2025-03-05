@@ -9,7 +9,10 @@ function Header() {
   return (
     <div className={styles.sidebar}>
       <a href="/">
-        <img src={logo} alt="Logo" className={styles.logo} />
+        <div className={styles.logoContainer}>
+          <img src={logo} alt="Logo" className={styles.logo} />
+          <span className={styles.logoText}>Skill&nbsp;Exchange</span>
+        </div>
       </a>
       <ul className={styles.navbar}>
         <li>
@@ -19,19 +22,19 @@ function Header() {
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="/search">
             <FaSearch />
             Tìm kiếm
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="/calendar">
             <FaCalendar />
             Lịch
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="/network">
             <FaUserFriends />
             Bạn bè
           </a>

@@ -1,9 +1,8 @@
-/* From Uiverse.io by Codecite */
-.spinner-container {
-  width: 150px;
-  height: 150px;
+.spinnerContainer {
+  width: 100px; /* Giảm từ 150px xuống 100px */
+  height: 100px; /* Giảm từ 150px xuống 100px */
   position: relative;
-  margin: 30px auto;
+  margin: 0 auto; /* Bỏ margin 30px để phù hợp trong modal */
   overflow: hidden;
 }
 
@@ -21,7 +20,6 @@
   from {
     transform: rotate(0deg);
   }
-
   to {
     transform: rotate(360deg);
   }
