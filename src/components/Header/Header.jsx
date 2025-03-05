@@ -2,38 +2,41 @@
 import React from "react";
 import styles from "./Header.module.css";
 import logo from "/skill_exchange_logo.svg";
-import { FaHome, FaSearch, FaBell, FaUser } from "react-icons/fa";
-import RegisterButton from "../RegisterButton/RegisterButton";
+import { FaHome, FaSearch, FaCalendar, FaUserFriends } from "react-icons/fa";
+import RegisterButton from "../RegisterButton";
 
 function Header() {
   return (
     <div className={styles.sidebar}>
       <a href="/">
-        <img src={logo} alt="Logo" className={styles.logo} />
+        <div className={styles.logoContainer}>
+          <img src={logo} alt="Logo" className={styles.logo} />
+          <span className={styles.logoText}>Skill&nbsp;Exchange</span>
+        </div>
       </a>
       <ul className={styles.navbar}>
         <li>
           <a href="/">
             <FaHome />
-            Home
+            Trang chủ
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="/search">
             <FaSearch />
-            About
+            Tìm kiếm
           </a>
         </li>
         <li>
-          <a href="#">
-            <FaBell />
-            Services
+          <a href="/calendar">
+            <FaCalendar />
+            Lịch
           </a>
         </li>
         <li>
-          <a href="#">
-            <FaUser />
-            Contact
+          <a href="/network">
+            <FaUserFriends />
+            Bạn bè
           </a>
         </li>
       </ul>

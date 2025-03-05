@@ -23,6 +23,7 @@
 }
 
 .sidebar {
+  top: 0;
   display: flex;
   width: 100%;
   align-items: center;
@@ -37,8 +38,21 @@
   z-index: 2;
 }
 
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
 .logo {
   height: 45px;
+  margin-right: 10px;
+}
+
+.logoText {
+  font-size: 20px;
+  font-weight: bold;
+  color: #01aac1;
+  display: block;
 }
 .navbar a svg {
   display: none;
@@ -95,5 +109,8 @@
   }
   .navbar a svg {
     display: block;
+  }
+  .logoText {
+    display: none;
   }
 }
